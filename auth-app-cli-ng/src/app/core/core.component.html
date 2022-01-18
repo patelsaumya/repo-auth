@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>AuthApp</span>
+  <span class="spacer"></span>
+  <button mat-icon-button mat-mini-fab class='user' [matTooltip]="getFullName()" [matMenuTriggerFor]="menu" aria-label="Example icon-button with share icon">
+    {{getCurrentUser()}}
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="logOut()">
+      <span>Log Out</span>
+    </button>
+<!--    <button mat-menu-item>-->
+<!--      <span>Edit User Info</span>-->
+<!--    </button>-->
+  </mat-menu>
+</mat-toolbar>
+<app-quick-access></app-quick-access>
+<router-outlet></router-outlet>

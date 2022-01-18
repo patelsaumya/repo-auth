@@ -1,0 +1,54 @@
+
+<div class="my-container">
+  <mat-card>
+    <form [formGroup]="myForm" autocomplete="off">
+      <h1>AuthApp</h1>
+      <hr>
+      <mat-form-field>
+        <mat-label>LoginId</mat-label>
+        <input matInput formControlName='loginId'>
+      </mat-form-field>
+      <!--      <div *ngIf="myForm.get('loginId')?.errors?.['required']">-->
+      <!--        LoginId is required.-->
+      <!--      </div>-->
+      <br>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput [type]="passwordInvisible? 'password':'text'" formControlName='password'>
+        <mat-icon *ngIf="passwordInvisible" (click)="passwordInvisible = !passwordInvisible" matSuffix>visibility</mat-icon>
+        <mat-icon *ngIf="!passwordInvisible" (click)="passwordInvisible = !passwordInvisible" matSuffix>visibility_off</mat-icon>
+      </mat-form-field>
+<!--      <div>-->
+<!--        <mat-checkbox formControlName="rememberMe">Remember me! 👀</mat-checkbox>-->
+<!--      </div>-->
+      <button color="primary" mat-raised-button type="submit" (click)="doLogin()">Login</button>
+      <div class="my-buttons">
+        <button mat-flat-button>Register</button>
+        <button mat-flat-button>Reset Password</button>
+      </div>
+    </form>
+    <hr class="or">
+    <div class="orOptions">
+      <a href="http://localhost:9092/auth/start_google_auth">
+        <button color="primary" mat-raised-button>
+          <img src="./assets/icons/google_icon.png"  height="48" width="48" alt="Google">&nbsp;
+          Sign in with Google
+        </button>
+      </a>
+      <button color="primary" mat-raised-button>
+        <img src="./assets/icons/github_logo_logos_icon.png"  height="48" width="48" alt="GitHub">&nbsp;
+        Sign in with GitHub
+      </button>
+      <button color="primary" mat-raised-button>
+        <img src="./assets/icons/facebook_icon.png"  height="48" width="48" alt="Meta">&nbsp;
+        Sign in with Facebook
+      </button>
+      <button color="primary" mat-raised-button>
+        <img src="./assets/icons/twitter_bird_icon.png"  height="48" width="48" alt="Twitter">&nbsp;
+        Sign in with Twitter
+      </button>
+    </div>
+  </mat-card>
+</div>
+
+

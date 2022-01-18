@@ -1,0 +1,68 @@
+$screen-xs-min: 0px;
+$screen-sm-min: 600px;
+$screen-md-min: 960px;
+$screen-lg-min: 1280px;
+$screen-xl-min: 1920px;
+
+//Print mixin
+@mixin print {
+  @media print {
+    @content
+  }
+}
+
+//ge - Device Width is Greater Then Or Equal To...
+@mixin ge-sm {
+  @media screen and (min-width: #{$screen-sm-min}) {
+    @content
+  }
+}
+
+@mixin ge-md {
+  @media screen and (min-width: #{$screen-md-min}) {
+    @content
+  }
+}
+
+@mixin ge-lg {
+  @media screen and (min-width: #{$screen-lg-min}) {
+    @content
+  }
+}
+
+@mixin ge-xl {
+  @media screen and (min-width: #{$screen-xl-min}) {
+    @content
+  }
+}
+
+//is - Device Width IS
+@mixin is-xs {
+  @media screen and (max-width: #{$screen-sm-min - 1}) {
+    @content
+  }
+}
+
+@mixin is-sm {
+  @media screen and (min-width: #{$screen-sm-min}) and (max-width: #{$screen-md-min - 1}) {
+    @content
+  }
+}
+
+@mixin is-md {
+  @media screen and (min-width: #{$screen-md-min}) and (max-width: #{$screen-lg-min - 1}) {
+    @content
+  }
+}
+
+@mixin is-lg {
+  @media screen and (min-width: #{$screen-lg-min}) and (max-width: #{$screen-xl-min - 1}) {
+    @content
+  }
+}
+
+@mixin is-xl {
+  @media screen and (min-width: #{$screen-xl-min}) {
+    @content
+  }
+}

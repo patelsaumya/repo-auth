@@ -1,0 +1,20 @@
+<div style="height: 100%; overflow-y: hidden">
+  <mat-toolbar  [color]="data.color? data.color: ''">
+    <h1 class="mat-h1 my-text-truncate">{{data.title}}</h1>
+    <span class="g-spacer"></span>
+    <button mat-icon-button [mat-dialog-close] tabindex="-1">
+      <mat-icon aria-label="Logout">close</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-dialog-content style="margin-right: 0; margin-bottom: 0; height: calc(100% - 125px)">
+    <div style="margin: 20px;">
+      {{data.message}}
+    </div>
+
+  </mat-dialog-content>
+
+  <div mat-dialog-actions style="margin-bottom:4px;margin-right: 10px; border-top-width: 1px; border-top-style: groove" align="end">
+    <button *ngFor="let button of data['buttons']" (click)="closeDialog(button.value)" [color]="button.color? button.color : ''" [type]="button.isDefault" mat-raised-button>{{button.caption}}</button>
+  </div>
+</div>
